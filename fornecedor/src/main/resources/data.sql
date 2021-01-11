@@ -9,4 +9,5 @@ CREATE TABLE INFORMACAO_FORNECEDOR (
 
 INSERT INTO INFORMACAO_FORNECEDOR (nome, uf, endereco) VALUES
   ('flor SP', 'SP', 'Billionaire Industrialist'),
-  ('flor GO', 'GO', 'Billionaire Tech Entrepreneur');
+  ('flor GO', 'GO', 'Billionaire Tech Entrepreneur'),
+  ('RAFA', 'CE', 'texto qualquer');
