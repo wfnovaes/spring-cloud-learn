@@ -1,0 +1,17 @@
+
+server.port: 8888
+
+spring:
+  config:
+    name: configserver
+  profile:
+    active: native
+  cloud:
+    config:
+      server:
+        git:
+          uri: "https://github.com/wfnovaes/spring-cloud-learn-config-repo"
+          searchPaths: fornecedor,loja
+#          uri: "file:/c:/projetos/microservice-config-repo"
+#          username: trolley
+#          password: strongpassword
