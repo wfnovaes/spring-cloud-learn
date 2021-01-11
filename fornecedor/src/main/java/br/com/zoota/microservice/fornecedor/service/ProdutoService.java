@@ -15,7 +15,7 @@ public class ProdutoService {
 	private ProdutoRepository produtoRepository;
 	
 	public List<Produto> getProdutosPorEstado(String uf) {
-		return produtoRepository.findByEstado(uf);
+		return produtoRepository.findByUf(uf);
 	}
 
 	
