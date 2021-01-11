@@ -62,3 +62,15 @@ Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name
 2021-01-09 19:37:36 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "INFORMACAO_FORNECEDOR" not found; SQL statement:
 select informacao0_.id as id1_0_, informacao0_.endereco as endereco2_0_, informacao0_.nome as nome3_0_, informacao0_.uf as uf4_0_ from informacao_fornecedor informacao0_ where informacao0_.uf=? [42102-200]
+2021-01-11 15:01:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PRODUTO" not found; SQL statement:
+select produto0_.id as id1_3_, produto0_.descricao as descrica2_3_, produto0_.nome as nome3_3_, produto0_.preco as preco4_3_, produto0_.uf as uf5_3_ from produto produto0_ where produto0_.id in (? , ?) [42102-200]
+2021-01-11 15:02:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PRODUTO" not found; SQL statement:
+select produto0_.id as id1_3_, produto0_.descricao as descrica2_3_, produto0_.nome as nome3_3_, produto0_.preco as preco4_3_, produto0_.uf as uf5_3_ from produto produto0_ where produto0_.id in (? , ?) [42102-200]
+2021-01-11 15:04:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PRODUTO" not found; SQL statement:
+select produto0_.id as id1_3_, produto0_.descricao as descrica2_3_, produto0_.nome as nome3_3_, produto0_.preco as preco4_3_, produto0_.uf as uf5_3_ from produto produto0_ where produto0_.id in (? , ?) [42102-200]
+2021-01-11 15:18:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "PRODUTO" not found; SQL statement:
+select produto0_.id as id1_3_, produto0_.descricao as descrica2_3_, produto0_.nome as nome3_3_, produto0_.preco as preco4_3_, produto0_.uf as uf5_3_ from produto produto0_ where produto0_.id in (? , ?) [42102-200]
