@@ -7,5 +7,5 @@ public class InfoPedidoDTO {
 
     private Long id;
 
-    private Integer tempoPreparo;
+    private Integer tempoDePreparo;
 }

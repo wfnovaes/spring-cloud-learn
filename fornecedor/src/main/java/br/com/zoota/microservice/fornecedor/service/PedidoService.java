@@ -5,24 +5,36 @@ import java.util.stream.Collectors;
 
 import br.com.zoota.microservice.fornecedor.model.Pedido;
 import br.com.zoota.microservice.fornecedor.model.PedidoItem;
+import br.com.zoota.microservice.fornecedor.model.PedidoStatus;
 import br.com.zoota.microservice.fornecedor.model.Produto;
 import br.com.zoota.microservice.fornecedor.repository.PedidoRepository;
 import br.com.zoota.microservice.fornecedor.repository.ProdutoRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.zoota.microservice.fornecedor.dto.ItemDoPedidoDTO;
 
 @Service
+@Slf4j
 public class PedidoService {
 	
+	private final PedidoRepository pedidoRepository;
+	private final ProdutoRepository produtoRepository;
+
 	@Autowired
-	private PedidoRepository pedidoRepository;
-	
-	@Autowired
-	private ProdutoRepository produtoRepository;
+	public PedidoService(PedidoRepository pedidoRepository, ProdutoRepository produtoRepository) {
+		this.pedidoRepository = pedidoRepository;
+		this.produtoRepository = produtoRepository;
+	}
+
+	public Pedido getPedidoPorId(Long id) {
+		log.info("Invocando getPedidoPorId(Long id); {}", id);
+		return this.pedidoRepository.findById(id).orElse(new Pedido());
+	}
 
 	public Pedido realizaPedido(List<ItemDoPedidoDTO> itensPedido) {
+		log.info("Invocando realizaPedido(List<ItemDoPedidoDTO> itensPedido); {}", itensPedido);
 		if(itensPedido == null) return null;
 		
 		List<PedidoItem> pedidoItens = toPedidoItem(itensPedido);
@@ -65,9 +77,5 @@ public class PedidoService {
 				.filter(p -> p.getId().equals(idItemLista))
 				.findFirst()
 				.orElseThrow(() -> new RuntimeException("Produto não encontrado, item da lista: " + idItemLista));
-	}
-
-	public Pedido getPedidoPorId(Long id) {
-		return this.pedidoRepository.findById(id).orElse(new Pedido());
 	}
 }

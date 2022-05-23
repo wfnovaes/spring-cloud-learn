@@ -1,5 +1,6 @@
 package br.com.zoota.microservice.loja.controller;
 
+
 import br.com.zoota.microservice.loja.dto.CompraDTO;
 import br.com.zoota.microservice.loja.model.Compra;
 import br.com.zoota.microservice.loja.service.CompraService;
@@ -21,7 +22,9 @@ public class CompraController {
   @PostMapping
   public Compra comprar(@RequestBody CompraDTO compra){
     log.info("Invocando metodo comprar(CompraDTO compra); {}", compra);
-    return compraService.comprar(compra);
+    Compra compraResposta = compraService.comprar(compra);
+    log.info("Compra realizada com sucesso!");
+    return  compraResposta;
   }
 
 }
