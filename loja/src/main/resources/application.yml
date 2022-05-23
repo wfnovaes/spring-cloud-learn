@@ -5,6 +5,10 @@ spring:
         active: dev
     config:
         import: configserver:http://localhost:8888
+
+    output:
+        ansi:
+            enabled: ALWAYS
     #  cloud:
     #    config:
     #      label: branch-name

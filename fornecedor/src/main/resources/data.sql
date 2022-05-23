@@ -1,4 +1,8 @@
 DROP TABLE IF EXISTS INFORMACAO_FORNECEDOR;
+DROP TABLE IF EXISTS PEDIDO;
+DROP TABLE IF EXISTS PEDIDO_ITEM;
+DROP TABLE IF EXISTS PRODUTO;
+
 
 CREATE TABLE INFORMACAO_FORNECEDOR (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -7,7 +11,33 @@ CREATE TABLE INFORMACAO_FORNECEDOR (
   endereco VARCHAR(250) DEFAULT NULL
 );
 
+CREATE TABLE PEDIDO (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  tempo_de_preparo INT NOT NULL,
+  status VARCHAR(250) NOT NULL
+);
+
+CREATE TABLE PEDIDO_ITEM (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  quantidade INT NOT NULL,
+  produto_id INT NOT NULL,
+  pedido_id INT
+);
+
+CREATE TABLE PRODUTO (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(250) NOT NULL,
+  uf VARCHAR(250) NOT NULL,
+  descricao VARCHAR(250) NOT NULL,
+  preco FLOAT NOT NULL
+);
+
+
 INSERT INTO INFORMACAO_FORNECEDOR (nome, uf, endereco) VALUES
   ('flor SP', 'SP', 'Billionaire Industrialist'),
   ('flor GO', 'GO', 'Billionaire Tech Entrepreneur'),
   ('RAFA', 'CE', 'texto qualquer');
+
+INSERT INTO PRODUTO (nome, uf, descricao, preco) VALUES
+    ('ABACATE', 'SP', 'Billionaire Industrialist', 1.99),
+    ('maca', 'GO', 'Billionaire Tech Entrepreneur2', 3.50);
