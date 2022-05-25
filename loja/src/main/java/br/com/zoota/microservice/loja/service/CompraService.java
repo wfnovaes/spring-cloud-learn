@@ -24,7 +24,7 @@ public class CompraService {
     }
 
     public Compra comprar(CompraDTO compra) {
-        log.info("Invocando comprar(CompraDTO compra); {}");
+        log.info("Invocando comprar(CompraDTO compra); {}", compra);
         InfoFornecedorDTO infoFornecedorDTO = fornecedorClient2.informacaoEstado(compra.getUf());
         InfoPedidoDTO infoPedidoDTO = fornecedorClient2.realizarPedido(compra.getItens());
         return gerarCompraSalva(compra, infoPedidoDTO);

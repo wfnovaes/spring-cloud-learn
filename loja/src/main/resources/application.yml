@@ -5,6 +5,15 @@ spring:
         active: dev
     config:
         import: configserver:http://localhost:8888
+    graphql:
+        schema:
+            printer:
+                enabled: true
+            locations:
+                - classpath:graphql/
+
+        graphiql:
+            enabled: true
 
     output:
         ansi:
